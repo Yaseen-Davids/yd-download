@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Series</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/style.css" />
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- GRID CONTAINER -->
+        <div class="grid_container">
+
+            <%- include('./modals/add_new', locals) %>
+            <%- include('./modals/edit', locals) %>
+            <%- include('./modals/next', locals) %>
+
+            <!-- MAIN SECTION -->
+            <div class="main_section">
+
+                <!-- MAIN TOP -->
+                <!-- <div class="main_top"></div> -->
+
+                <!-- MAIN CONTENT -->
+                <div class="main_content">
+
+                    <h4 class="main_content_header">Series downloaded</h4>
+                    <button data-modal="modal_1" class="add_new modal_btn">Add New <i class="fas fa-plus"></i></button>
+
+                    <div class="series_text">
+                        <% for(let i = 0; i < series.length; i++) { %>
+                            <p><%= series[i].title %> S<%=series[i].season %> E<%=series[i].episode %>
+                                <button data-title="<%= series[i].title %>" data-modal="modal_3" class="modal_btn next_btn"><i class="fas fa-angle-double-up"></i></button>
+                                <button data-title="<%= series[i].title %>" data-modal="modal_2" class="modal_btn edit_btn"><i class="fas fa-edit"></i></button>
+                                <button class="download_btn"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                            </p>
+                        <% } %>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/modal.js"></script>
+    
+</body>
+</html>

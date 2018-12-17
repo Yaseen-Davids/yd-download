@@ -1,0 +1,30 @@
+<!-- MODALS BOX -->
+<!-- MODALS WRAPPER -->
+<div class="modal_wrapper modal_1">
+<!-- MODALS MAIN -->
+<div class="modal_main">
+    <div class="modal_header">
+        <h2><span class="header_text">What do you want to download?</span></h2>
+    </div>
+    <div class="modal_content">
+         <form class="form_modal" method="POST" action="/add_new">
+            <label for="title">Series Name</label>
+            <br>
+            <input name="title" id="title" type="text" class="form_input" autofocus placeholder="Enter name here" required>
+            <br>
+            <br>
+            <label for="season" class="second_label">Season</label>
+            <br>
+            <input name="season" id="season" type="number" class="form_input" placeholder="Enter season here" required>
+            <br>
+            <br>
+            <label for="episode" class="second_label">Episode</label>
+            <br>
+            <input name="episode" id="episode" type="number" class="form_input" placeholder="Enter episode here" required>
+            <br>
+            <button type="submit" class="add_list">Submit</button>
+            <button type="reset" class="cancel_btn">Cancel</button>
+        </form>
+    </div>
+</div>
+</div>

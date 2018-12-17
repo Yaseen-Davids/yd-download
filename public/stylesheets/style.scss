@@ -1,0 +1,125 @@
+// STYLESHEET
+
+$border: 1px solid black;
+
+@import 'modals';
+
+*{
+    margin: 0;
+}
+
+.container{
+    background: linear-gradient(to right, #FFAFBD, #ffc3a0);
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid_container{
+    display: grid;
+    grid-template-areas: '. main_section .'
+    ;
+    grid-template-columns: 1fr 30% 1fr;
+}
+
+.main_section{
+    grid-area: main_section;
+    // border: $border;
+    font-family: 'Poppins', sans-serif;
+    height: 550px;
+    margin-top: 80px;
+    box-shadow: 0px 0px 15px #fff;
+    background: rgba(255, 255, 255, 0.815);
+    padding: 10px;
+    border-radius: 5px;
+
+    .main_content{
+        height: 550px;
+        box-shadow: 0px 0px 15px #cecece;
+        color: rgb(42, 44, 73);
+        position: relative;
+
+        .main_content_header{
+            background: #333; 
+            color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            font-weight: lighter;
+        }
+        .add_new{
+            @include button();
+            padding: 0.5rem 0.75rem;
+            background: green;
+            font-size: 14px;
+            color: white;
+            border-radius: 4px;
+            position: absolute;
+            right: 10px;
+            top: 4px;
+            transition: all 0.3s;
+            i{
+                margin-left: 4px;
+                transition: all 0.3s;
+            }
+            &:hover{
+                i{
+                    margin-left: 8px;
+                }
+                background: rgb(0, 184, 0);
+            }
+        }
+        .series_text{
+            padding: 5px;
+            overflow: hidden;
+            overflow-y: scroll;
+            height: 480px;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            &::-webkit-scrollbar-thumb {
+                background: #555;
+            }
+            &::-webkit-scrollbar-track {
+                background: #ffffff;
+            }
+
+            p{
+                background: white;
+                margin-bottom: 5px;
+                color: #3d72b4;
+                padding: 10px;
+                font-weight: 600;
+                border-radius: 5px;
+                &:hover{
+                    .download_btn{
+                        display: block;
+                    }
+                }
+            }
+            .downloading{
+                background: rgb(218, 218, 218);
+            }
+            .edit_btn{
+                @include button();
+                float: right;
+                color: royalblue;
+                font-size: 14px;
+            }
+            .next_btn{
+                @include button();
+                float: right;
+                color: green;
+                font-size: 15px;
+            }
+            .download_btn{
+                display: none;
+                @include button();
+                float: right;
+                color: rgb(203, 224, 10);
+                font-size: 15px;
+            }
+        }
+    }
+}
