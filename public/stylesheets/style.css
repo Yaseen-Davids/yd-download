@@ -319,6 +319,20 @@
   color: black;
 }
 
+.series_section .series_content .series_content_main .search_series {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  float: right;
+  color: green;
+  font-size: 16px;
+}
+
+.series_section .series_content .series_content_main .piratebay {
+  color: black;
+}
+
 .series_section .series_content .series_content_main .edit_btn {
   border: none;
   outline: none;
@@ -326,7 +340,7 @@
   cursor: pointer;
   float: right;
   color: royalblue;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .series_section .series_content .series_content_main .next_btn {

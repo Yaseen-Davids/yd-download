@@ -114,4 +114,43 @@ $(document).ready(function(){
         })
     });
 
+    $(".search_series").on('click', function(){
+        var title = $(this).attr("data-title");
+        var season = $(this).attr("data-season");
+        var episode = $(this).attr("data-episode");
+        var website = $(this).attr("data-web");
+
+        function checkSeason(){
+            if (season < 10){
+                return seasontext = "0" + season;
+            }
+            else {
+                return seasontext = season;
+            }
+        }
+        function checkEpisode(){
+            if (episode < 10){
+                return episodetext = "0" + episode;
+            }
+            else {
+                return episodetext = episode;
+            }
+        }
+
+        function searchSeries(){
+            checkSeason();
+            checkEpisode();
+            var theSeach = title + " s" + seasontext + "e" +  episodetext;
+            if (website == "limetorrents"){
+                window.open("https://www.limetorrents.info/search/all/" + theSeach + "/");
+            }
+            else if (website == "piratebay"){
+                window.open("https://www.thepiratebay.org/search/" + theSeach + "/0/99/0");
+            }
+            
+        }
+
+        searchSeries();
+    })
+
 })

@@ -93,11 +93,20 @@
             .series_s_e{
                 color: black;
             }
+            .search_series{
+                @include button();
+                float: right;
+                color: green;
+                font-size: 16px;
+            }
+            .piratebay{
+                color: black;
+            }
             .edit_btn{
                 @include button();
                 float: right;
                 color: royalblue;
-                font-size: 14px;
+                font-size: 16px;
             }
             .next_btn{
                 @include button();
