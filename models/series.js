@@ -13,10 +13,6 @@ let seriesSchema = mongoose.Schema({
     season: {
         type: Number,
         required: true
-    },
-    dateUpdated:{
-        type: String,
-        required: true
     }
 })
 

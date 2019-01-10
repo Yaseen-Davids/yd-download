@@ -2,22 +2,21 @@ $(document).ready(function(){
   
     $(".edit_btn").on('click', function(){
 
-        var theTitle = $(this).data("title");
-        var url = 'https://api.mlab.com/api/1/databases/series-to-do/collections/series?apiKey=s9Sjlqqdqj-rscZfP8zgevtIyfu3Wfq1&q={"title":"'+ theTitle +'"}';
+        var userID = $(this).attr("data-id");
+        console.log(userID);
 
         $.ajax({
-            url: url,
+            url: "/series_data/" + userID,
             contentType: "application/json",
             method: "GET",
             success: function(response){
 
-                // GET RESPONSE
-                var title = response[0].title;
-                var season = response[0].season;
-                var episode = response[0].episode;
+                var title = response.title;
+                var episode = response.episode;
+                var season = response.season;
+                var id = response._id;
 
-                // PUT DATA IN MODAL
-                $("#hidden_title").val(title);
+                $("#data_id").val(id);
                 $("#title_edit").val(title);
                 $("#season_edit").val(season);
                 $("#episode_edit").val(episode);
@@ -29,25 +28,22 @@ $(document).ready(function(){
 
     $(".next_btn").on('click', function(){
 
-        var theTitle = $(this).data("title");
-        var url = 'https://api.mlab.com/api/1/databases/series-to-do/collections/series?apiKey=s9Sjlqqdqj-rscZfP8zgevtIyfu3Wfq1&q={"title":"'+ theTitle +'"}';
+        var userID = $(this).attr("data-id");
 
         $.ajax({
-            url: url,
+            url: "/next_data/" + userID,
             contentType: "application/json",
             method: "GET",
-            success: function(result){
+            success: function(response){
 
-                console.log(result)
+                var title = response.title;
+                var episode = response.episode + 1;
+                var season = response.season;
+                var id = response._id;
 
-                // GET RESPONSE
-                var title = result[0].title;
-                var season = result[0].season;
-                var episode = result[0].episode + 1;
-
-                // PUT DATA IN MODAL
+                $("#id_next").val(id);
+                $(".header_text_next").text(title);
                 $("#title_next").val(title);
-                $(".header_text").text(title);
                 $("#season_next").val(season);
                 $("#episode_next").val(episode);
 
@@ -55,19 +51,67 @@ $(document).ready(function(){
         })
 
     });
-    
-    $(".download_btn").on('click', function(){
 
-        var closest = $(this).closest("p");
+    // POST ID TO EDIT MOVIE MODAL
+    $(".edit_movie").on('click', function(){
+        var id = $(this).attr("data-id");
 
-        if (closest.hasClass("downloading")){
-            closest.removeClass("downloading")
-        }
-        else{
-            closest.addClass("downloading")
-        }
+        $.ajax({
+            url: "/get-movie/" + id,
+            method: "GET",
+            success: function(response){
+                var movieTitle = response.title;
+                var movieID = response._id;
 
+                $("#movie_id").val(movieID);
+                $("#movie_title").val(movieTitle);
+                
+            }
+        })
+
+    });
+
+    // POST ID TO DELETE MOVIE MODAL
+    $(".delete_movies_btn").on('click', function(){
+        var id = $(this).attr("data-id");
+
+        $(".delete_movies").attr("data-id", id);
+    });
+
+    //  AJAX TO DELETE MOVIE
+    $(".delete_movies").on('click', function(){
+        var id = $(this).attr("data-id");
         
-    })
+        $.ajax({
+            url: '/delete-movie/' + id,
+            method: "DELETE",
+            success: function(response){
+                console.log(response);
+                window.location.href = "/";
+            }
+        })
+    });
+
+
+    // POST ID TO DELETE SERIES MODAL
+    $(".delete_series_btn").on('click', function(){
+        var id = $(this).attr("data-id");
+
+        $(".delete_series").attr("data-id", id);
+    });
+
+    //  AJAX TO SERIES MOVIE
+    $(".delete_series").on('click', function(){
+        var id = $(this).attr("data-id");
+        
+        $.ajax({
+            url: '/delete-series/' + id,
+            method: "DELETE",
+            success: function(response){
+                console.log(response);
+                window.location.href = "/";
+            }
+        })
+    });
 
 })

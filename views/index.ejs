@@ -20,28 +20,30 @@
         <!-- GRID CONTAINER -->
         <div class="grid_container">
 
-            <%- include('./modals/add_new', locals) %>
-            <%- include('./modals/edit', locals) %>
-            <%- include('./modals/next', locals) %>
+            <%- include('./modals/add_new_series', locals) %>
+            <%- include('./modals/edit_series', locals) %>
+            <%- include('./modals/next_series', locals) %>
+            <%- include('./modals/add_new_movie', locals) %>
+            <%- include('./modals/edit_movie', locals) %>
+            <%- include('./modals/confirm_series', locals) %>
+            <%- include('./modals/confirm_movies', locals) %>
 
-            <!-- MAIN SECTION -->
-            <div class="main_section">
+            <!-- SERIES SECTION -->
+            <div class="series_section">
+                <!-- SERIES CONTENT -->
+                <div class="series_content">
 
-                <!-- MAIN TOP -->
-                <!-- <div class="main_top"></div> -->
+                    <div class="series_content_header">
+                        <h4>Series to download</h4>
+                        <button data-modal="modal_1" class="add_new modal_btn">Add New <i class="fas fa-plus"></i></button>
+                    </div>
 
-                <!-- MAIN CONTENT -->
-                <div class="main_content">
-
-                    <h4 class="main_content_header">Series downloaded</h4>
-                    <button data-modal="modal_1" class="add_new modal_btn">Add New <i class="fas fa-plus"></i></button>
-
-                    <div class="series_text">
+                    <div class="series_content_main">
                         <% for(let i = 0; i < series.length; i++) { %>
-                            <p><%= series[i].title %> S<%=series[i].season %> E<%=series[i].episode %>
-                                <button data-title="<%= series[i].title %>" data-modal="modal_3" class="modal_btn next_btn"><i class="fas fa-angle-double-up"></i></button>
-                                <button data-title="<%= series[i].title %>" data-modal="modal_2" class="modal_btn edit_btn"><i class="fas fa-edit"></i></button>
-                                <button class="download_btn"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                            <p class="series_text"><%= series[i].title %> S<%=series[i].season %> E<%=series[i].episode %>
+                                <button class="delete_series_btn modal_btn" data-modal="modal_7" data-id="<%= series[i].id %>"><i class="fas fa-trash"></i></button>
+                                <button data-id="<%= series[i].id %>" data-modal="modal_3" class="modal_btn next_btn"><i class="fas fa-angle-double-up"></i></button>
+                                <button data-id="<%= series[i].id %>" data-modal="modal_2" class="modal_btn edit_btn"><i class="fas fa-edit"></i></button>
                             </p>
                         <% } %>
                     </div>
@@ -50,14 +52,34 @@
 
             </div>
 
+            <!-- MOVIES SECTION -->
+            <div class="movies_section">
+
+                <div class="movies_content">
+                    
+                    <div class="movies_content_header">
+                        <h4>Movies to download</h4>
+                        <button data-modal="modal_4" class="add_new modal_btn">Add New <i class="fas fa-plus"></i></button>
+                    </div>
+
+                    <div class="movies_content_main">
+                        <% for(let i2 = 0; i2 < movies.length; i2++) { %>
+                            <p class="movies_text" data-id="<%= movies[i2].id %>"><%= movies[i2].title %>
+                                <button class="delete_movies_btn modal_btn" data-modal="modal_5" data-id="<%= movies[i2].id %>"><i class="fas fa-trash"></i></button>
+                                <button class="edit_movie modal_btn" data-modal="modal_6" data-id="<%= movies[i2].id %>"><i class="fas fa-edit"></i></button>
+                            </p>
+                        <% } %>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <script src="/javascripts/script.js"></script>
     <script src="/javascripts/modal.js"></script>

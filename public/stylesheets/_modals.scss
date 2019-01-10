@@ -96,6 +96,9 @@ $textColor: #5f5f5f;
                 color: red;
                 text-decoration: underline;
             }
+            .confirm_cancel{
+                color: royalblue;
+            }
         }
     }
 }
@@ -103,5 +106,33 @@ $textColor: #5f5f5f;
 .modal_3{
     .modal_main{
         height: 350px;
+    }
+}
+.modal_4, .modal_6{
+    .modal_main{
+        height: 250px;;
+    }
+}
+.modal_5, .modal_7{
+    .modal_main{
+        height: 150px;
+        text-align: center;
+        button{
+            @include button();
+            padding: 10px 25px;
+            border-radius: 5px;
+        }
+        .confirm_delete{
+            @include button();
+            background: red;
+            color: white;
+            font-size: 16px;
+            padding: 0.55rem 1.8rem;
+            border-radius: 3px;
+            transition: all 0.3s;
+            &:hover{
+                background: rgb(192, 20, 20);
+            }
+        }
     }
 }
