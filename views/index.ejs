@@ -33,6 +33,7 @@
             <%- include('./modals/edit_movie', locals) %>
             <%- include('./modals/confirm_series', locals) %>
             <%- include('./modals/confirm_movies', locals) %>
+            <%- include('labels', locals) %>
 
             <!-- SERIES SECTION -->
             <div class="series_section">
@@ -47,9 +48,9 @@
                     <div class="series_content_main">
                         <% for(let i = 0; i < series.length; i++) { %>
                             <p class="series_text"><%= series[i].title %> <span class="series_s_e">S<%=series[i].season %> E<%=series[i].episode %></span>
-                                <button class="delete_series_btn modal_btn" data-modal="modal_7" data-id="<%= series[i].id %>"><i class="fas fa-trash"></i></button>
-                                <button data-id="<%= series[i].id %>" data-modal="modal_3" class="modal_btn next_btn"><i class="fas fa-angle-double-up"></i></button>
-                                <button data-id="<%= series[i].id %>" data-modal="modal_2" class="modal_btn edit_btn"><i class="fas fa-edit"></i></button>
+                                <button class="delete_series_btn modal_btn label_main" data-label="label_1" data-modal="modal_7" data-id="<%= series[i].id %>"><i class="fas fa-trash"></i></button>
+                                <button data-id="<%= series[i].id %>" data-label="label_2" data-modal="modal_3" class="modal_btn next_btn label_main"><i class="fas fa-angle-double-up"></i></button>
+                                <button data-id="<%= series[i].id %>" data-label="label_3" data-modal="modal_2" class="modal_btn edit_btn label_main"><i class="fas fa-edit"></i></button>
                             </p>
                         <% } %>
                     </div>
@@ -71,8 +72,8 @@
                     <div class="movies_content_main">
                         <% for(let i2 = 0; i2 < movies.length; i2++) { %>
                             <p class="movies_text" data-id="<%= movies[i2].id %>"><%= movies[i2].title %>
-                                <button class="delete_movies_btn modal_btn" data-modal="modal_5" data-id="<%= movies[i2].id %>"><i class="fas fa-trash"></i></button>
-                                <button class="edit_movie modal_btn" data-modal="modal_6" data-id="<%= movies[i2].id %>"><i class="fas fa-edit"></i></button>
+                                <button class="delete_movies_btn modal_btn label_main" data-label="label_5" data-modal="modal_5" data-id="<%= movies[i2].id %>"><i class="fas fa-trash"></i></button>
+                                <button class="edit_movie modal_btn label_main" data-label="label_4" data-modal="modal_6" data-id="<%= movies[i2].id %>"><i class="fas fa-edit"></i></button>
                             </p>
                         <% } %>
                     </div>
@@ -89,6 +90,7 @@
 
     <script src="/javascripts/script.js"></script>
     <script src="/javascripts/modal.js"></script>
+    <script src="/javascripts/label.js"></script>
     
 </body>
 </html>
