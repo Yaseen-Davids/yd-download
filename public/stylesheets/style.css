@@ -160,6 +160,38 @@
   margin: 0;
 }
 
+.link_btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  background: #2BB64B;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 1px 0px black;
+          box-shadow: 0 1px 1px 0px black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.link_btn:hover {
+  -webkit-box-shadow: 0 1px 10px 0px black;
+          box-shadow: 0 1px 10px 0px black;
+}
+
+.limetorrents_btn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.piratebay_btn {
+  position: absolute;
+  left: 150px;
+  top: 20px;
+}
+
 .container {
   background: -webkit-gradient(linear, left top, right top, from(#FFAFBD), to(#ffc3a0));
   background: linear-gradient(to right, #FFAFBD, #ffc3a0);
@@ -268,6 +300,10 @@
 
 .series_section .series_content .series_content_main .series_text:hover .download_btn {
   display: block;
+}
+
+.series_section .series_content .series_content_main .series_s_e {
+  color: black;
 }
 
 .series_section .series_content .series_content_main .edit_btn {

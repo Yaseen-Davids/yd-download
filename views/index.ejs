@@ -28,6 +28,12 @@
             <%- include('./modals/confirm_series', locals) %>
             <%- include('./modals/confirm_movies', locals) %>
 
+            <!-- BUTTONS -->
+            <!-- LIMETORRENTS LINK BUTTON -->
+            <a href="https://www.limetorrents.info/home" target="_blank"><button class="limetorrents_btn link_btn">Limetorrents</button></a>
+            <!-- PIRATEBAY LINK BUTTON -->
+            <a href="https://www.thepiratebay.org/" target="_blank"><button class="piratebay_btn link_btn">PirateBay</button></a>
+
             <!-- SERIES SECTION -->
             <div class="series_section">
                 <!-- SERIES CONTENT -->
@@ -40,7 +46,7 @@
 
                     <div class="series_content_main">
                         <% for(let i = 0; i < series.length; i++) { %>
-                            <p class="series_text"><%= series[i].title %> S<%=series[i].season %> E<%=series[i].episode %>
+                            <p class="series_text"><%= series[i].title %> <span class="series_s_e">S<%=series[i].season %> E<%=series[i].episode %></span>
                                 <button class="delete_series_btn modal_btn" data-modal="modal_7" data-id="<%= series[i].id %>"><i class="fas fa-trash"></i></button>
                                 <button data-id="<%= series[i].id %>" data-modal="modal_3" class="modal_btn next_btn"><i class="fas fa-angle-double-up"></i></button>
                                 <button data-id="<%= series[i].id %>" data-modal="modal_2" class="modal_btn edit_btn"><i class="fas fa-edit"></i></button>

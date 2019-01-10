@@ -64,6 +64,31 @@ $border: 1px solid black;
     margin: 0;
 }
 
+
+// BUTTONS
+.link_btn{
+    @include button();
+    background: #2BB64B;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0px black;
+    transition: all 0.2s;
+    &:hover{
+        box-shadow: 0 1px 10px 0px black;
+    }
+}
+.limetorrents_btn{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.piratebay_btn{
+    position: absolute;
+    left: 150px;
+    top: 20px;
+}
+
 .container{
     background: linear-gradient(to right, #FFAFBD, #ffc3a0);
     height: 100vh;
@@ -119,6 +144,9 @@ $border: 1px solid black;
 
             .series_text{
                 @include boxText();
+            }
+            .series_s_e{
+                color: black;
             }
             .edit_btn{
                 @include button();
