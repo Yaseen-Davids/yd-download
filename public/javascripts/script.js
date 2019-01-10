@@ -153,4 +153,17 @@ $(document).ready(function(){
         searchSeries();
     })
 
+    $(".search_movie").on('click', function(){
+        var title = $(this).attr('data-title');
+        var website = $(this).attr("data-web");
+        
+        if (website == "limetorrents"){
+            window.open("https://www.limetorrents.info/search/all/" + title + "/");
+        }
+        else if (website == "piratebay"){
+            window.open("https://www.thepiratebay.org/search/" + title + "/0/99/0");
+        }
+
+    })
+
 })

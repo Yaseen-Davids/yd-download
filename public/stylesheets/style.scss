@@ -90,35 +90,29 @@
             .series_text{
                 @include boxText();
             }
+            button{
+                @include button();
+                float: right;
+                font-size: 16px;
+                cursor: pointer;
+            }
             .series_s_e{
                 color: black;
             }
             .search_series{
-                @include button();
-                float: right;
                 color: green;
-                font-size: 16px;
             }
             .piratebay{
                 color: black;
             }
             .edit_btn{
-                @include button();
-                float: right;
                 color: royalblue;
-                font-size: 16px;
             }
             .next_btn{
-                @include button();
-                float: right;
                 color: green;
-                font-size: 15px;
             }
             .delete_series_btn{
-                @include button();
-                float: right;
                 color: red;
-                font-size: 15px;
             }
         }
     }
@@ -146,6 +140,10 @@
                     float: right;
                     @include button();
                     cursor: pointer;
+                    font-size: 16px;
+                }
+                .limetorrents{
+                    color: green;
                 }
                 .delete_movies_btn{
                     color: red;

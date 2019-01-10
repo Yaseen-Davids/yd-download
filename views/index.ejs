@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Series</title>
+    <title>iForgot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- STYLESHEET -->
     <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/style.css" />
@@ -76,6 +76,8 @@
                             <p class="movies_text" data-id="<%= movies[i2].id %>"><%= movies[i2].title %>
                                 <button class="delete_movies_btn modal_btn label_main" data-label="label_5" data-modal="modal_5" data-id="<%= movies[i2].id %>"><i class="fas fa-trash"></i></button>
                                 <button class="edit_movie modal_btn label_main" data-label="label_4" data-modal="modal_6" data-id="<%= movies[i2].id %>"><i class="fas fa-edit"></i></button>
+                                <button class="search_movie limetorrents label_main" data-label="label_6" data-web="limetorrents" data-title="<%= movies[i2].title %>"><i class="fas fa-lemon"></i></button>
+                                <button class="search_movie label_main" data-label="label_7" data-web="piratebay" data-title="<%= movies[i2].title %>"><i class="fas fa-skull-crossbones"></i></button>
                             </p>
                         <% } %>
                     </div>

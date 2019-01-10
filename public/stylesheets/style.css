@@ -315,18 +315,22 @@
   display: block;
 }
 
-.series_section .series_content .series_content_main .series_s_e {
-  color: black;
-}
-
-.series_section .series_content .series_content_main .search_series {
+.series_section .series_content .series_content_main button {
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
   float: right;
-  color: green;
   font-size: 16px;
+  cursor: pointer;
+}
+
+.series_section .series_content .series_content_main .series_s_e {
+  color: black;
+}
+
+.series_section .series_content .series_content_main .search_series {
+  color: green;
 }
 
 .series_section .series_content .series_content_main .piratebay {
@@ -334,33 +338,15 @@
 }
 
 .series_section .series_content .series_content_main .edit_btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-  float: right;
   color: royalblue;
-  font-size: 16px;
 }
 
 .series_section .series_content .series_content_main .next_btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-  float: right;
   color: green;
-  font-size: 15px;
 }
 
 .series_section .series_content .series_content_main .delete_series_btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-  float: right;
   color: red;
-  font-size: 15px;
 }
 
 .movies_section {
@@ -432,6 +418,11 @@
   background: transparent;
   cursor: pointer;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.movies_section .movies_content .movies_content_main .movies_text .limetorrents {
+  color: green;
 }
 
 .movies_section .movies_content .movies_content_main .movies_text .delete_movies_btn {
